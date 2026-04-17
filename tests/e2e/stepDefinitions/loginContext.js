@@ -14,7 +14,7 @@ When('admin user log in with following credentials', async function (dataTable) 
           console.log('pending')
          });
 
-Then('admin user should be navigated to admin panek dashboard', async function () {
+Then('admin user should be navigated to admin panel dashboard', async function () {
            // Write code here that turns the phrase above into concrete actions
           console.log('pending')
          });
