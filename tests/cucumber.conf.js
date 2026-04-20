@@ -1,21 +1,21 @@
 //cucumber.conf.js file
 
-const { Before, BeforeAll, AfterAll, After, setDefaultTimeout } = require("@cucumber/cucumber");
-const { chromium } = require("playwright");
+const { Before, BeforeAll, AfterAll, After, setDefaultTimeout } = require('@cucumber/cucumber');
+const { chromium } = require('playwright');
 
-setDefaultTimeout(60000)
+setDefaultTimeout(60000);
 
 // launch the browser
 BeforeAll(async function () {
   global.browser = await chromium.launch({
-      headless: true,
-      slowMo: 1000,
+    headless: true,
+    slowMo: 1000,
   });
 });
 
 // close the browser
 AfterAll(async function () {
-   await global.browser.close();
+  await global.browser.close();
 });
 
 // Create a new browser context and page per scenario
