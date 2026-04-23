@@ -1,7 +1,7 @@
 Feature: login
  As an admin
  I want to log in to the website admin panel
- So that I can manage my products
+ So that I can manage my product
 
   Scenario: login with valid credentials
     Given admin user has navigated to the login page
