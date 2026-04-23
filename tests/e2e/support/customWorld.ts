@@ -23,6 +23,7 @@ export class CustomWorld extends World {
   meetings: Record<string, unknown> = {};
   scenarioData: Record<string, unknown> = {};
 
+
   constructor(options: IWorldOptions) {
     super(options);
   }
