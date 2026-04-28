@@ -26,3 +26,11 @@ Then('admin user should be navigated to admin panel dashboard', async function (
   await expect(this.page).toHaveURL(this.loginPage.baseUrl);
   await expect(this.loginPage.dashboardSelector).toBeVisible();
 });
+
+// Given('the admin user is in the dashboard page', async function (this: CustomWorld, dataTable: DataTable) {
+//   this.loginPage = new LoginPage(this.page);
+
+//   await this.loginPage.navigateToLoginPage();
+//   await this.loginPage.login(dataTable);
+//   await expect(this.page).toHaveURL(this.loginPage.baseUrl);
+// });
