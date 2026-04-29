@@ -4,6 +4,7 @@ import { Browser, BrowserContext, Page } from '@playwright/test';
 
 import { LoginPage } from '../pages/LoginPage';
 import { ProjectPage } from '../pages/Projectpage';
+import { RenameProjectPage } from '../pages/RenameProjectPage';
 export class CustomWorld extends World {
   browser!: Browser;
   context!: BrowserContext;
@@ -11,6 +12,7 @@ export class CustomWorld extends World {
 
   loginPage!: LoginPage;
   projectPage!: ProjectPage;
+  renameProjectPage!: RenameProjectPage;
 
   users: Record<string, unknown> = {};
   meetings: Record<string, unknown> = {};

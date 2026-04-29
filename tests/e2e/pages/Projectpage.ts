@@ -9,7 +9,8 @@ export class ProjectPage {
   private readonly addProjectSelector: Locator;
   private readonly projectNameSelector: Locator;
   private readonly projectBtnSelector: Locator;
-  public readonly addBoardSelector: Locator;
+  public readonly displaySelector: Locator;
+  public readonly addSettingSelector: Locator;
   constructor(page: Page) {
     this.page = page;
     this.baseUrl = 'http://localhost:3000/';
@@ -17,16 +18,21 @@ export class ProjectPage {
     this.addProjectSelector = this.page.locator('.Projects_addButton__Wwa-t');
     this.projectNameSelector = this.page.getByRole('textbox', { name: 'Enter project name...' });
     this.projectBtnSelector = this.page.locator('.Button_submit__6X4EX');
-    this.addBoardSelector = this.page.getByRole('button', { name: 'Project Settings' });
+
+    this.displaySelector = this.page.locator('.Project_title__kdDy-');
+    this.addSettingSelector = this.page.getByRole('button', { name: 'Project Settings' });
   }
+
   public async navigateToDashboard(): Promise<void> {
     await this.page.goto(`${this.baseUrl}`);
   }
   public async dashboard(dataTable: DataTable): Promise<void> {
     const data = dataTable.hashes();
-    await Promise.all([this.page.waitForLoadState('networkidle'), this.addProjectSelector.click()]);
-    await this.projectNameSelector.fill(data[0].name);
-    await Promise.all([this.page.waitForLoadState('networkidle'), this.projectBtnSelector.click()]);
+    await this.addProjectSelector.click();
+    await this.projectNameSelector.fill(data[0].projectName);
+    await this.projectBtnSelector.click();
+    await this.displaySelector.click();
+    await this.addSettingSelector.click();
   }
   public async navigateToProjects(): Promise<void> {
     await this.page.goto(`${this.projectUrl}`);
