@@ -31,4 +31,5 @@ export class LoginPage {
 
     await Promise.all([this.page.waitForLoadState('networkidle'), this.loginBtnSelector.click()]);
   }
+  
 }
