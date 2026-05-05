@@ -14,7 +14,6 @@ export class CustomWorld extends World {
   loginPage!: LoginPage;
   projectPage!: ProjectPage;
   renameProjectPage!: RenameProjectPage;
-  
   users: Record<string, unknown> = {};
   meetings: Record<string, unknown> = {};
   scenarioData: Record<string, unknown> = {};

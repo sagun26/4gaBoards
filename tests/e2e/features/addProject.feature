@@ -1,26 +1,24 @@
-Feature: Add project
+Feature: Manage projects
   As an admin
-  I want to create projects from the dashboard
-  So that I can manage my projects
+  I want to create and update existing ones
+  So that I can organize my projects
 
   Background:
-    Given admin user has navigated to the login page
-    And admin user log in with following credentials
+    Given the admin user has logged in with the following credentials
       | email | password |
       | demo  | demo     |
-    And admin user should be navigated to admin panel dashboard
 
-  Scenario: Create new project
+  Scenario: Create a new project
     When the admin  creates a project with the following details
       | projectName |
       | TestProject |
     Then the project "TestProject" should be visible on the dashboard
 
-  Scenario: Rename a project successfully
+  Scenario: Rename a project
     Given the admin has created a project with the following details
-      | projectName |
-      | TestProject |
+      | projectName  |
+      | TestProject1 |
     When the admin renames a project with following details
-      | projectName | newProjectName |
-      | TestProject | UpdatedProject |
-    Then the project name should be updated to "UpdatedProject"
+      | projectName  | newProjectName |
+      | TestProject1 | UpdatedProject |
+    Then the project "UpdatedProject" should be visible on the dashboard

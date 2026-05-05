@@ -28,8 +28,6 @@ export class LoginPage {
 
     await this.emailFieldSelector.fill(data[0].email);
     await this.passwordFieldSelector.fill(data[0].password);
-
     await Promise.all([this.page.waitForLoadState('networkidle'), this.loginBtnSelector.click()]);
   }
-  
 }
