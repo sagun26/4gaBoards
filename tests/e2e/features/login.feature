@@ -4,8 +4,8 @@ Feature: login
  So that I can manage my products
 
   Scenario: Successful login with valid credentials
-    Given admin user has navigated to the login page
-    When admin user log in with following credentials
+    Given the admin user has navigated to the login page
+    When the admin user log in with following credentials
       | email | password |
       | demo  | demo     |
-    Then admin user should be navigated to admin panel dashboard
+    Then the admin user should be navigated to admin panel dashboard
